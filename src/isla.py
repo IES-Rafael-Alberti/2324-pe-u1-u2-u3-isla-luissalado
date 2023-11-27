@@ -50,17 +50,7 @@ CORRECCIÓN DE ERRORES O PROBLEMAS:
 
 MEJORAS:
 
-* 1: Mostrar los números del tablero asociados a las filas y las columnas.
-     Pero las filas y columnas que empiecen en el número 1 visualmente.
 
-   1 2 3 4 5
-  -----------
-1 |? ? ? ? ?|
-2 |?     ? ?|
-3 |?       ?|
-4 |? ? ? ? ?|
-5 |  ? ? ? ?|
-  -----------
 
 * 2: Mostrar la posición del jugador con respecto a la numeración visual del mapa.
 
@@ -274,8 +264,11 @@ def simbolo_celda(celda):
 
 def imprimir_mapa_oculto(mapa: list):
     """Imprime el mapa sin revelar el tesoro ni las trampas."""
+    
     for fila in mapa:
         print(" ".join([simbolo_celda(celda) for celda in fila]))
+        
+
 
 
 def imprimir_mapa(mapa: list):
@@ -310,7 +303,8 @@ def muestra_estado_mapa(mapa, posicion_jugador):
     """Muestra el mapa y la posición del jugador."""
 
     imprimir_mapa_oculto(mapa)
-    print(f"Tu posición es {posicion_jugador}")
+    x,y=posicion_jugador
+    print(f"Tu posición es {x+1,y+1}")
 
 
 def jugar():
