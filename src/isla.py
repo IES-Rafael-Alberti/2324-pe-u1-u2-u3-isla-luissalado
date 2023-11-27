@@ -238,8 +238,6 @@ def obtener_nueva_posicion(posicion_jugador: tuple, movimiento: str,mapa) -> tup
     :return: La nueva posición del jugador.
     """
     
-    
-    movimiento = pedir_movimiento(mapa)
     direccion = MOVIMIENTOS.get(movimiento)
     nueva_posicion = (posicion_jugador[FILAS] + direccion[FILAS], posicion_jugador[COLUMNAS] + direccion[COLUMNAS])
     return nueva_posicion
